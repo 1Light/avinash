@@ -4,7 +4,7 @@
 int main( )
 {
 	FILE *note_file ;
-    note_file = fopen("note.txt", "w") ;
+    note_file = fopen("note.txt", "a") ;
 	
     char note[50];
     printf("please enter a note: ");
@@ -17,10 +17,8 @@ int main( )
 	}
 	else
 	{
-
-        fprintf(note_file,note);
+        fputs(note, note_file);
 		printf("Data successfully written in file note.txt \n");
-
 		fclose(note_file) ;
 		printf("The file is now closed.") ;
 	}
